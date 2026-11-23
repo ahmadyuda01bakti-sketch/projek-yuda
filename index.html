@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rotan Ridwan Cirebon | Rattan Handicraft Exporter</title>
+  <meta name="description" content="Rattan handicraft exporter from Cirebon. Check stock, calculate price, shipping cost, and delivery estimate.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="icon" href="assets/keranjang.jpg">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top bar">
+    <div class="container">
+      <a class="navbar-brand" href="#beranda">Rotan Ridwan</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#beranda">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tentang">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#produk">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-rotan btn-sm px-3" href="#hitung">Calculate order</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="beranda">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <p class="hero-kecil">Rattan exporter, Cirebon</p>
+          <h1>Handwoven rattan, delivered to your door</h1>
+          <p class="lead">Check stock, total price, shipping cost, and estimated arrival of your order on one page.</p>
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a href="#hitung" class="btn btn-rotan btn-lg">Calculate order</a>
+            <a href="#produk" class="btn btn-garis btn-lg">View products</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-foto">
+            <img class="besar" src="assets/kursi.jpg" alt="Bowl-shaped rattan chair with black iron legs" width="800" height="654">
+            <img class="kecil" src="assets/keranjang.jpg" alt="Two rattan picnic baskets with lids and lace fabric" width="400" height="400">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="anyam" aria-hidden="true"></div>
+
+  <main>
+    <section id="tentang">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5 order-lg-2">
+            <img class="foto-tentang" src="assets/lampu.jpg" alt="Lit rattan pendant lamp" width="800" height="760">
+          </div>
+          <div class="col-lg-7">
+            <h2>From Cirebon to the world</h2>
+            <p class="isi">Rotan Ridwan is a rattan handicraft export business owned by Mr. Ridwan in Cirebon, a city long known as Indonesia's rattan hub. Every product is woven by local artisans from selected rattan that is dried and varnished, then packed securely for international shipping.</p>
+            <ul class="daftar-nilai">
+              <li><i class="bi bi-hand-index-thumb"></i><div><strong>Handwoven</strong><span>Traditional weaving techniques, with each product made one by one.</span></div></li>
+              <li><i class="bi bi-box-seam"></i><div><strong>Secure packaging</strong><span>Wrapped in layers to arrive intact by sea or by air.</span></div></li>
+              <li><i class="bi bi-globe-asia-australia"></i><div><strong>Six destination countries</strong><span>Singapore, Malaysia, Japan, Australia, the Netherlands, and the United States.</span></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="produk" class="latar-kabut">
+      <div class="container">
+        <div class="judul-seksi">
+          <h2>Products and variants</h2>
+          <p>A green badge means the item is in stock. Prices are in Indonesian Rupiah (Rp). Choose a product to calculate your order right away.</p>
+        </div>
+        <div class="row g-4" id="daftarProduk"></div>
+      </div>
+    </section>
+
+    <section id="hitung">
+      <div class="container">
+        <div class="judul-seksi">
+          <h2>Calculate order</h2>
+          <p>The summary updates automatically whenever you change an option.</p>
+        </div>
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-6">
+            <div class="form-kotak">
+              <div class="mb-3">
+                <label for="selProduk" class="form-label">Product</label>
+                <select id="selProduk" class="form-select"></select>
+              </div>
+              <div class="mb-3">
+                <label for="selVarian" class="form-label">Variant</label>
+                <select id="selVarian" class="form-select"></select>
+              </div>
+              <div class="mb-3">
+                <label for="inpJumlah" class="form-label">Quantity (units)</label>
+                <input id="inpJumlah" type="number" min="1" value="1" class="form-control">
+                <div id="pesanStok" class="form-text text-danger" role="alert"></div>
+              </div>
+              <div class="mb-3">
+                <label for="selTujuan" class="form-label">Destination country</label>
+                <select id="selTujuan" class="form-select"></select>
+              </div>
+              <p class="form-label mb-2">Shipping method</p>
+              <div class="d-flex gap-2">
+                <input class="btn-check" type="radio" name="metode" id="metLaut" value="laut" checked>
+                <label class="btn btn-metode flex-fill" for="metLaut"><i class="bi bi-water"></i> Sea, economical</label>
+                <input class="btn-check" type="radio" name="metode" id="metUdara" value="udara">
+                <label class="btn btn-metode flex-fill" for="metUdara"><i class="bi bi-airplane"></i> Air, fast</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="nota d-none" id="hasil">
+              <h3>Order summary</h3>
+              <div class="baris"><span>Availability</span><strong id="outStatus"></strong></div>
+              <div class="baris"><span>Product total</span><strong id="outSubtotal"></strong></div>
+              <div class="baris"><span>Weight</span><strong id="outBerat"></strong></div>
+              <div class="baris"><span>Shipping cost</span><strong id="outOngkir"></strong></div>
+              <div class="baris"><span>Estimated arrival</span><strong id="outEstimasi"></strong></div>
+              <div class="nota-total">
+                <span>Total to pay</span>
+                <strong id="outTotal"></strong>
+              </div>
+              <a id="btnWa" class="btn btn-wa w-100" href="#hitung" target="_blank" rel="noopener">
+                <i class="bi bi-whatsapp"></i> Order via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="latar-kabut">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          <div class="col-lg-4">
+            <h2>Frequently asked questions</h2>
+            <p class="isi">Answers to what prospective clients ask most often.</p>
+          </div>
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <strong>Rotan Ridwan, Cirebon, West Java</strong>
+      <span><i class="bi bi-whatsapp"></i> +62 812-3456-7890</span>
+      <span>&copy; <span id="tahun"></span> Rotan Ridwan</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+:root {
+  --laut: #12303f;
+  --laut-muda: #1d4a5e;
+  --rotan: #c8923f;
+  --rotan-gelap: #a8761f;
+  --kabut: #e8eeec;
+  --putih: #fbfcfb;
+  --teks: #17262e;
+  --redam: #5a6c74;
+  --hijau-bg: #dcefe6;
+  --hijau-tx: #14614a;
+}
+body { color: var(--teks); background: var(--putih); line-height: 1.65; }
+h1, h2, h3, .navbar-brand { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-weight: 700; letter-spacing: -.01em; }
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); color: var(--laut); }
+section { padding: 5rem 0; scroll-margin-top: 64px; }
+.latar-kabut { background: var(--kabut); }
+.isi { max-width: 62ch; color: var(--redam); }
+.judul-seksi { margin-bottom: 2.2rem; }
+.judul-seksi p { color: var(--redam); margin: .4rem 0 0; }
+
+/* Navbar */
+.bar { background: rgba(251,252,251,.94); backdrop-filter: blur(6px); border-bottom: 1px solid #d5dedb; }
+.navbar-brand { color: var(--laut); font-size: 1.35rem; }
+.bar .nav-link { color: var(--teks); font-weight: 500; }
+.bar .nav-link:hover { color: var(--rotan-gelap); }
+
+/* Tombol */
+.btn-rotan { background: var(--rotan); color: #1b1305; border: 0; font-weight: 600; border-radius: 999px; }
+.btn-rotan:hover, .btn-rotan:focus { background: var(--rotan-gelap); color: #fff; }
+.btn-garis { color: #fff; border: 2px solid rgba(255,255,255,.55); border-radius: 999px; font-weight: 600; }
+.btn-garis:hover { background: #fff; color: var(--laut); }
+.btn-wa { background: #1f8f5f; color: #fff; font-weight: 600; border-radius: 999px; padding: .75rem 1rem; }
+.btn-wa:hover { background: #17744d; color: #fff; }
+
+/* Hero */
+.hero { background: var(--laut); color: #fff; padding: 5rem 0 4.5rem; }
+.hero-kecil { color: var(--rotan); font-weight: 600; margin-bottom: .8rem; }
+.hero h1 { font-size: clamp(2.2rem, 5.2vw, 3.8rem); line-height: 1.1; margin-bottom: 1.2rem; }
+.hero .lead { color: #c7d8de; max-width: 46ch; }
+.hero-foto { position: relative; padding-bottom: 2.5rem; padding-right: 2.5rem; }
+.hero-foto .besar { width: 100%; height: auto; display: block; border-radius: 1.5rem 1.5rem 1.5rem 0; box-shadow: 14px 14px 0 var(--laut-muda); }
+.hero-foto .kecil { position: absolute; right: 0; bottom: 0; width: 38%; height: auto; border: 6px solid var(--laut); border-radius: 1rem; }
+
+/* Pita anyaman */
+.anyam {
+  height: 22px;
+  background:
+    repeating-linear-gradient(45deg, var(--rotan) 0 8px, #e3b571 8px 16px),
+    var(--rotan);
+  border-top: 3px solid var(--rotan-gelap);
+  border-bottom: 3px solid var(--rotan-gelap);
+}
+
+/* Tentang */
+.foto-tentang { width: 100%; height: auto; border-radius: 50% 50% 1rem 1rem / 38% 38% 1rem 1rem; }
+.daftar-nilai { list-style: none; padding: 0; margin: 1.8rem 0 0; }
+.daftar-nilai li { display: flex; gap: 1rem; padding: 1rem 0; border-top: 1px solid #d5dedb; }
+.daftar-nilai i { font-size: 1.5rem; color: var(--rotan-gelap); line-height: 1.4; }
+.daftar-nilai strong { display: block; color: var(--laut); }
+.daftar-nilai span { color: var(--redam); }
+
+/* Produk */
+.produk { background: #fff; border-radius: 1rem; overflow: hidden; height: 100%; display: flex; flex-direction: column; box-shadow: 0 1px 0 #cdd8d5, 0 10px 24px -14px rgba(18,48,63,.4); }
+.produk-foto img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+.produk-isi { padding: 1.2rem; display: flex; flex-direction: column; flex: 1; }
+.produk-isi h3 { font-size: 1.2rem; color: var(--laut); margin-bottom: .3rem; }
+.produk-isi p { font-size: .9rem; color: var(--redam); }
+.varian { list-style: none; padding: 0; margin: .4rem 0 1.2rem; font-size: .88rem; }
+.varian li { display: grid; grid-template-columns: 1fr auto; gap: .1rem .5rem; padding: .55rem 0; border-top: 1px dashed #c3cfcc; }
+.varian .v-harga { font-weight: 700; color: var(--laut); }
+.stok { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-size: .75rem; font-weight: 600; padding: .2rem .6rem; border-radius: 999px; }
+.stok.ready { background: var(--hijau-bg); color: var(--hijau-tx); }
+.stok.habis { background: #ebe8e3; color: #6c6760; }
+.varian li.kosong .v-nama, .varian li.kosong .v-harga { color: #8b8b86; text-decoration: line-through; }
+.btn-laut { margin-top: auto; background: var(--laut); color: #fff; border-radius: 999px; font-weight: 600; }
+.btn-laut:hover, .btn-laut:focus { background: var(--laut-muda); color: #fff; }
+
+/* Form dan nota */
+.form-kotak { background: #fff; border: 1px solid #cdd8d5; border-radius: 1rem; padding: 1.6rem; }
+.form-label { font-weight: 600; color: var(--laut); }
+.form-select, .form-control { border-color: #b9c7c3; padding: .6rem .8rem; }
+.form-select:focus, .form-control:focus { border-color: var(--rotan); box-shadow: 0 0 0 .2rem rgba(200,146,63,.25); }
+.btn-metode { border: 2px solid #b9c7c3; color: var(--laut); font-weight: 600; border-radius: .6rem; padding: .7rem; }
+.btn-check:checked + .btn-metode { background: var(--laut); border-color: var(--laut); color: #fff; }
+.btn-check:focus-visible + .btn-metode { outline: 3px solid var(--rotan); outline-offset: 2px; }
+
+.nota { background: #fff; border: 2px dashed var(--laut); border-radius: .4rem; padding: 1.6rem; position: relative; }
+.nota h3 { font-size: 1.25rem; color: var(--laut); margin-bottom: 1rem; }
+.nota .baris { display: flex; justify-content: space-between; gap: 1.2rem; padding: .55rem 0; border-bottom: 1px dotted #b9c7c3; }
+.nota .baris span { color: var(--redam); flex-shrink: 0; }
+.nota .baris strong { text-align: right; font-weight: 600; }
+.nota-total { display: flex; justify-content: space-between; align-items: baseline; margin: 1.2rem 0; padding: 1rem; background: var(--laut); color: #fff; border-radius: .4rem; }
+.nota-total strong { font-size: 1.6rem; font-family: "Iowan Old Style", Palatino, Georgia, serif; }
+
+/* FAQ */
+.accordion { --bs-accordion-border-color: #c3cfcc; --bs-accordion-active-bg: #fff; --bs-accordion-active-color: var(--laut); --bs-accordion-btn-focus-box-shadow: 0 0 0 .2rem rgba(200,146,63,.3); }
+.accordion-button { font-weight: 600; }
+
+footer { background: var(--laut); color: #c7d8de; padding: 2rem 0; }
+footer strong { color: #fff; }
+:focus-visible { outline: 3px solid var(--rotan); outline-offset: 2px; }
+
+@media (max-width: 575px) {
+  section { padding: 3.5rem 0; }
+  .hero { padding: 3.5rem 0 3rem; }
+  .hero-foto { padding-right: 1.2rem; }
+  .hero-foto .besar { box-shadow: 8px 8px 0 var(--laut-muda); }
+  .nota .baris { flex-direction: column; gap: 0; }
+  .nota .baris strong { text-align: left; }
+}
